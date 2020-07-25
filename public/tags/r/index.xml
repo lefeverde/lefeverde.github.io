@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on A Hugo website</title>
+    <link>/tags/r/</link>
+    <description>Recent content in R on A Hugo website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 25 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Modelling personal risk of COVID19 part 1: Why large groups are a really bad idea right now</title>
+      <link>/2020/07/25/modelling-personal-risk-of-covid19-part-1-why-large-groups-are-a-really-bad-idea-right-now/</link>
+      <pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/07/25/modelling-personal-risk-of-covid19-part-1-why-large-groups-are-a-really-bad-idea-right-now/</guid>
+      <description>Introduction I—like everyone else in the world—wants to be done this pandemic and to just get on with things. Unfortunately, COVID19 has other ideas. The reality is we’re just going to have to live it with for the time being. This of course varies from country to country. I’m an American who lives in Pennsylvania with family and friends in various locations scattered throughout the U.S. So everything I write will necessarily be colored by that perspective.</description>
+    </item>
+    
+  </channel>
+</rss>

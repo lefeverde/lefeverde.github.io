@@ -1,0 +1,138 @@
+---
+title: "Modelling personal risk of COVID19 part 1: Why large groups are a really
+  bad idea right now"
+author: Daniel Lefever
+date: '2020-07-25'
+categories:
+  - COVID19
+  - model
+  - probability
+  - R
+  - statistics
+tags:
+  - COVID19
+  - model
+  - probability
+  - R
+  - statistics
+slug: modelling-personal-risk-of-covid19-part-1-why-large-groups-are-a-really-bad-idea-right-now
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE)
+```
+
+
+# Introduction
+I&mdash;like everyone else in the world&mdash;wants to be done this pandemic and to just get on with things. Unfortunately, COVID19 has other ideas. The reality is we're just going to have to live it with for the time being. This of course varies from country to country. I'm an American who lives in Pennsylvania with family and friends in various locations scattered throughout the U.S. So everything I write will necessarily be colored by that perspective. This is not to say that I'm happy with our response to the pandemic. This whole thing has been mishandled to such a degree that I couldn't have even imagined possible before the pandemic. However, regardless of how we arrived at this point, I think everyone would agree that our most immediate concern is how can we best minimize the harm from both the virus itself and the mitigation strategies used to contain it.  
+
+This is not to say I am an expert when it comes to COVID19. I am not in the infectious disease field, nor am I an epidemiologist. What I am, is a biomedical PhD candidate whose research involves quite a bit of data science. I think I have a knack for dealing with large, messy, imperfectly collected data. I've also spent more time than I would like to admit learning about this pandemic. In short, while I'm not an expert in this field, I do have a background and skills that gives me the ability to understand the science. 
+
+I&mdash;and I'd imagine most people&mdash;were motivated to learn about this virus out of self&mdash;interest. I've wanted to keep myself and people I care about safe. From this, I've noticed there is quite a lot of misconceptions the general public holds about the pandemic. Let me start by stating this statement is in no way meant to belittle or otherwise demean anyone. I also want to emphatically state that just because someone has an incorrect understanding of this pandemic, and even science more broadly, it does not mean they are stupid. Most people are not scientists, so of course they will have trouble understanding science! You wouldn't expect the average person to understand forensic accounting or reverse mergers. It's not a personal failing anymore than going to a lawyer for a legal question is. I mean, I can just barely do my taxes. 
+
+With that in mind, I would like to share what I've learned and hope to clarify misconceptions where I can.     
+
+# Danger of groups
+## The birthday problem or how infrequent events can be suprsingly common.
+If the incidence of something is low, then you could correctly guess that it didn't happen and be right most of the time. For example, if you were to guess that a randomly selected male does not have breast cancer, you would be right [99.9973% of the time](https://www.cancer.net/cancer-types/breast-cancer-men/statistics). However, just because something is rare, that doesn't preclude it from happening. Given a sufficiently large sample size of randomly selected males, you're bound to find at least one who has breast cancer, even the incidence is punishingly small. This is similar to the [birthday problem](https://betterexplained.com/articles/understanding-the-birthday-paradox/) which can be posed as: "how many randomly selected people would it take for at least two people to share a birthday?". The first thing about this kind of problem is that it's actually much easier to find the probability that something does not occur than the other way around. This is useful because the probability of an event occurring $P_A$ and the probability of an event not occurring $P_A'$ must equal $1$. We can find the probability of an event occurring by $P_A = 1 - P_A'$, and it not occurring is $P_A'=1 - P_A$. So this is for one event. What about more than one? Since these are independent (i.e., the first event does not change the probability of next and so on), we can multiply the probabilities together. The equation is $P_A'=(1 - P_A)^{n}$, where $n$ is the number of events (For the birthday problem, $n$ does not equal the number of people, but instead the combinations of people). The overall probability of success (at least 2 people share the same birthday) can be found by $P(success) = 1 - (1 - P_A)^{n}$.  For the birthday problem, it turns out you only need 23 people (this makes 253 ways to combine 2 people) to have a 50% chance that at least 2 people share a birthday.  
+
+## How this all relates to COVID19
+There are many different tools people can access online which can give people some idea of their personal risk to COVID19. That's what I want to know: what measures should I take to keep my risk below an acceptable level? For a number of reasons, I wasn't satisfied with the models these tools use. These reasons included models that were overly-complicated or based assumptions I found questionable. I also found some which combined the estimated probability of catching COVID19 with disease severity. In my opinion, this can make the resulting probability hard to interpret. So I decided to make my own model. To do something like this, I find it's best to get an idea of what other people have done and then reverse engineer it. Of the models I found, my personal favorite is one produced by a group out of [Georgia Tech](https://covid19risk.biosci.gatech.edu). They use the same sort of calculations as the birthday problem to estimate how likely it is at least one individual is infected in a group of people. While this doesn't tell you personal risk&mdash;which is what I'm ultimately after&mdash;I like this model because it's simple. The reason why that is a good thing is that the more complicated a model, the harder it is to understand. Additionally, simpler models often out-perform more complicated models. 
+
+Ultimately, I want to get an idea of how risky it is to do certain things (e.g., going to gym, shopping for groceries, riding the bus, etc.) but this is a good first step. The probability that at least one individual is infected with COVID19 in group for a given number of people is found by $P(infected) = 1 - (1 - p_{est})^{n}$. Here $p_{est}$ is the estimated probability a randomly selected individual has COVID19. The GaTech group estimated $p_{est}$ by dividing the number of positive cases over the total population. For example, as of July 20th, 2020, the U.S. has close to 4,000,000 confirmed cases. The total population size is around 330,000,000. Using these numbers, you would expect that a randomly selected American would have around a 1.3% chance of having COVID19, and $p_{est} = 0.0133$. I want to stress that the way I've calculated $p_{est}$ is an *estimate*. I'm not claiming that this is the actual probability that someone has the disease. Not everyone who has been infected with COVID19 has been tested, and so the number of confirmed cases are an underestimate of the actual number of cases. Regardless, the confirmed number of cases is a metric that (with some caveats) is consistent. So even though confirmed cases is not actual cases, I would expect that the two are strongly correlated. In other words, there is some number of actual cases for each confirmed case, but the exact relationship is unknown. However, that doesn't turn out to be too much of problem, as I'll show in the next section. 
+
+
+## Putting everything together
+In this section, I'm to put everything together and plotting the results using different assumptions for how many actual cases there are for each confirmed case. The group at [Georgia Tech](https://covid19risk.biosci.gatech.edu) also made plots, but I personally found them to be confusing. So first thing I'll write some `R code` to help with the calculations. 
+
+```{r prob_functs, fig.cap = ""}
+prob_from_group_size <- function(p_est, group_size){
+  infected_prob <- 1 - (1 - p_est)**group_size
+  return(infected_prob)
+}
+
+group_size_from_prob <- function(p_est, infected_prob){
+  group_size = log(1 - infected_prob)/log(1 - p_est)
+  return(group_size)
+}
+```
+
+The first function is just an `R` implementation of $P(infected) = 1 - (1 - p_{est})^{n}$. The second is a just a re-arrangement that returns the group size for a given $P(infected)$. Next, I need to come up with some way to estimate $p_{est}$. It's useful to start by thinking of the range of possible values that $p_{est}$ could be. We know that the actual number of infected is less than 100%, and it's greater than 0%. The U.S mean of 1.3% is a reasonable start. However, this is based on an underestimate of the number of actual cases. To make the numbers cleaner, lets round this down to 1%, and say this represents lowest possible prevalence. That is, the number of actual number of cases is equal to the confirmed number of cases. This of course isn't true, but it's still useful as a lower bound. What is the upper bound? I'm going to use the seroprevalence data provided by [CDC](https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/commercial-lab-surveys.html), which found that the maximum number of actual cases was 24x the number of confirmed cases. This is in all likelihood an overestimate. The director of the [CDC](https://www.politico.com/news/2020/06/25/cdc-coronavirus-infections-higher-than-confirmed-339963) gave 10x as the most likely number. Lets use 1x, 5x, 10x, 25x as the possible values. 
+```{r}
+library(tidyverse)
+library(reshape2)
+
+group_sizes <-  seq(1, 1000)
+case_ratio <- c(1, 5, 10, 25)
+nms <- case_ratio %>% paste0(., "x")
+case_ratio <- case_ratio*.01
+
+
+plot_data <- 
+  map(group_sizes, function(x){
+    map(case_ratio, function(y){
+      prob_from_group_size(y, x)
+    }) %>% do.call(c, .)
+  }) %>% do.call(rbind, .)
+
+plot_data <- cbind(group_sizes, plot_data) %>% 
+  as_tibble %>% 
+  setNames(., c("Group size", nms))
+
+
+
+plot_data <-  melt(plot_data, id.vars = "Group size")
+
+```
+
+It's also useful to use some sort of threshold so that you can give people a single number. So I'm also going to calculate the size of the group needed such that there is a 50% chance at least 1 person is infected. That's what the second equation in the first code chunk is for. 
+```{r}
+halfway_points <- 
+  case_ratio %>% 
+  map(function(x){
+    group_size_from_prob(x, .5)
+  }) %>% 
+  do.call(c, .)
+
+halfway_points <- tibble( x=halfway_points, y=.5)
+```
+
+Lastly, I will combine all this into a plot. The x-axis is the number of individuals in the group, the y-axis is the probability at least one individual has COVID19. The group-size needed for a 50% chance at least one individual has COVID19 is also plotted.
+```{r}
+library(cowplot)
+library(ggrepel)
+
+plt <- ggplot(data = plot_data, aes(x = `Group size`, y=value, group=variable)) + 
+  scale_y_continuous(expand = c(0,0), limits = c(NA, 1)) +
+  geom_line(aes(colour=variable),
+            size=1.15) + 
+  theme_cowplot() + 
+  theme(legend.position = "bottom",
+        text=element_text(face="bold"),
+        aspect.ratio=.75) + 
+  guides(colour=guide_legend(ncol = 1, title = "Estimated incidence\nfrom confirmed cases", override.aes = list(size = 1.5))) + 
+  labs(y="Probability atleast one\nindividual is infected")
+
+
+ plt + 
+  geom_point(data=halfway_points,inherit.aes = FALSE, aes(x, y)) +
+  geom_label_repel(data=halfway_points,inherit.aes = FALSE, 
+                  xlim = c(50, NA),
+                  force = 250,
+                  aes(x, y, label=round(x)), size=5, min.segment.length = 0, nudge_x = .15, nudge_y = .15) + 
+  geom_hline(yintercept = .5, alpha=.5,linetype = "dashed" ) 
+  
+ 
+```
+
+# Conclusion
+I was completely surprised by the results from this model. At the lowest end of 1%, it only takes 69 randomly selected people to have a 50% chance for at least one to be infected! This number goes down to just 14 people if 5% of the population is infected, only 7 if it's 10%! Now I want to make it clear that I am not stating this is the actual truth, only what the model predicts. With that in mind, there's definitely a lot we can learn from this. First, it should hopefully be clear why congregating in large groups of people is a bad idea. Things like sports, church, concerts, etc. can all bring together hundreds, if not thousands of people. At a certain point, it's all but guaranteed that someone at the event has COVID19.  
+
+Of course, that doesn't mean you or anyone else will necessarily contract the disease. There are ways to cut down on potential spread (e.g., social distancing, wearing masks, being outside, etc). These measures are fairley effective, but adherence remains a challenge that is likely dependent on the crowd. For example, I would expect that intoxicated people at a bar are going to ignore the guidelines, whereas sober people going to church would be much more likely to faithfully follow them. 
+
+Next I will want to see how plausible these results are. Of course, I can't directly test it. I will only be able to indirectly test these results using independent data. One thing that strikes me is that past, say 5%, most people should directly know someone infected. My impression is that there are large numbers of people who don't know anyone with it. I also think that's why there is so much unfounded skepticism. While I can't say for sure, it's worth exploring. 
+
+
+
+
+
