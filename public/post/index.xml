@@ -6,10 +6,19 @@
     <description>Recent content in Posts on DELs personal site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The long hauler phenomena: Why COVID19 mortality is only part of the story</title>
+      <link>/2020/07/27/the-long-hauler-phenomena-why-covid19-mortality-is-only-part-of-the-story/</link>
+      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/07/27/the-long-hauler-phenomena-why-covid19-mortality-is-only-part-of-the-story/</guid>
+      <description>Introduction There has been quite a lot of focus on using the infection fatality rate (IFR)1 of COVID19 to quantify the disease severity. The first thing to note here is that despite the math being simple, this is surprisingly hard to calculate2. One reason is that the total number of cases is unkown. However even if that were known, the actual number is not static3. With that said, the CDC’s current best guess of the overall infection fatality rate (IFR) is 0.</description>
+    </item>
     
     <item>
       <title>Modelling personal risk of COVID19 part 1: Why large groups are a really bad idea right now</title>

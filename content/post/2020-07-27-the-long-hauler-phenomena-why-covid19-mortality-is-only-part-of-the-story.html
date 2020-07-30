@@ -1,0 +1,65 @@
+---
+title: 'The long hauler phenomena: Why COVID19 mortality is only part of the story'
+author: Daniel Lefever
+date: '2020-07-27'
+slug: the-long-hauler-phenomena-why-covid19-mortality-is-only-part-of-the-story
+categories:
+  - COVID19
+  - probability
+  - statistics
+tags:
+  - COVID19
+  - model
+  - probability
+  - statistics
+---
+
+
+
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>There has been quite a lot of focus on using the infection fatality rate (IFR)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> of COVID19 to quantify the disease severity. The first thing to note here is that despite the math being simple, this is surprisingly hard to calculate<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. One reason is that the total number of cases is unkown. However even if that were known, the actual number is not static<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>. With that said, the CDC’s current best guess of the overall infection fatality rate (IFR) is <a href="https://www.cdc.gov/coronavirus/2019-ncov/hcp/planning-scenarios.html">0.65%</a>. When you further break this down according to age, the estimated IFR of younger people is much smaller.</p>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ───────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
+## ✓ tibble  3.0.2     ✓ dplyr   1.0.0
+## ✓ tidyr   1.1.0     ✓ stringr 1.4.0
+## ✓ readr   1.3.1     ✓ forcats 0.5.0</code></pre>
+<pre><code>## ── Conflicts ──────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>library(ggplot2)
+library(cowplot)</code></pre>
+<pre><code>## 
+## ********************************************************</code></pre>
+<pre><code>## Note: As of version 1.0.0, cowplot does not change the</code></pre>
+<pre><code>##   default ggplot2 theme anymore. To recover the previous</code></pre>
+<pre><code>##   behavior, execute:
+##   theme_set(theme_cowplot())</code></pre>
+<pre><code>## ********************************************************</code></pre>
+<pre class="r"><code>plot_data &lt;- tibble(status=c(&quot;Recovered&quot;, &quot;Dead&quot;), value=c(.9935, .0065))
+
+ggplot(data=plot_data, aes(x=status, y=value)) + 
+  geom_col() + 
+  scale_y_continuous(labels = scales::percent_format()) + 
+  theme_cowplot() + 
+  theme(text = element_text(face=&quot;bold&quot;)) + labs(x=&quot;&quot;, y=&quot;Percentage Infected with COVID19&quot;)</code></pre>
+<div class="figure">
+<img src="/post/2020-07-27-the-long-hauler-phenomena-why-covid19-mortality-is-only-part-of-the-story_files/figure-html/naive_binary_mortality-1.png" alt="Binary outcome" width="672" />
+<p class="caption">
+(#fig:naive_binary_mortality)Binary outcome
+</p>
+</div>
+<p>Lets forgot about the demographics and stick with a single IFR 0.65% for the moment. Since only 0.65% of people die, then that must mean 99.35% of people will ultimately recover. You can see<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> in @ref(fig:naive_binary_mortality) that the recovered dwarfs deaths, to the point where it’s hard to even see the deaths at all. The issue here is that recovery can be misleading. That immediately brings to mind a return to baseline. That’s unfortunately not always the case.</p>
+<p>For example, some of the people in the recovered group had a <a href="https://www.nejm.org/doi/full/10.1056/NEJMc2009787#article_citing_articles">stroke</a> brought on by COVID19.
+Some people who recover from the virus</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>The number of deaths over the total number of infections<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>This <a href="https://ourworldindata.org/mortality-risk-covid#country-by-country-data-on-mortality-risk-of-the-covid-19-pandemic">page</a> goes into the nuances for why this is.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>In other words, the IFR is influenced by many factors such as the available treatment and the health of the population.<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Not that I think anyone needs help visualizing how large of a difference this is, I just like pictures.<a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
