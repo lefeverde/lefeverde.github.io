@@ -1,0 +1,44 @@
+---
+title: 'Modelling COVID-19 disease severity: just how dangerous is it for me?'
+author: Daniel Lefever
+date: '2020-07-30'
+slug: modelling-covid-19-disease-severity-just-how-dangerous-is-it-for-me
+categories:
+  - COVID-19
+  - disease severity
+  - model
+  - probability
+  - R
+  - statistics
+  - epidemiology
+tags:
+  - COVID-19
+  - model
+  - probability
+  - R
+  - statistics
+---
+
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE)
+```
+
+# Introduction
+
+Lets forgot about the demographics and stick with a single IFR 0.65% for the moment. Since only 0.65% of people die, then that must mean 99.35% of people will ultimately recover. You can see^[Not that I think anyone needs help visualizing how large of a difference this is, I just like pictures.] in \@ref(fig:naive_binary_mortality) that the recovered dwarfs deaths, to the point where it's hard to even see the deaths at all. The issue here is that recovery can be misleading. When I think of recovery, I think of a return to baseline^[For example, when I get a cold, I'm miserable for anywhere from 3-14 days. After that, I'm back to normal. Sometimes, even better because of all the rest.]. That's unfortunately just not always the case with COVID-19. 
+
+```{r naive_binary_mortality, fig.cap="Binary outcome"}
+library(tidyverse)
+library(ggplot2)
+library(cowplot)
+plot_data <- tibble(status=c("Recovered", "Dead"), value=c(.9935, .0065))
+
+ggplot(data=plot_data, aes(x=status, y=value)) + 
+  geom_col() + 
+  scale_y_continuous(labels = scales::percent_format()) + 
+  theme_cowplot() + 
+  theme(text = element_text(face="bold")) + labs(x="", y="Percentage Infected with COVID-19")
+
+
+```

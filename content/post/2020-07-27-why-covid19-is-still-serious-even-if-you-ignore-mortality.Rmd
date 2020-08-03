@@ -1,0 +1,60 @@
+---
+title: 'Why COVID-19 is still serious even if you ignore mortality'
+author: Daniel Lefever
+date: '2020-07-27'
+categories:
+  - 'COVID-19'
+  - 'disease severity'
+  - 'epidemiology'
+tags:
+  - 'COVID-19'
+slug: why-covid19-is-still-serious-even-if-you-ignore-mortality
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE, message=FALSE)
+```
+
+# Introduction
+There has been quite a lot of focus on using the infection fatality rate (IFR)^[The number of deaths over the total number of infections] of COVID-19 to quantify the disease severity. The first thing to note here is that despite the math being simple, this is surprisingly hard to calculate^[This [page](https://ourworldindata.org/mortality-risk-covid#country-by-country-data-on-mortality-risk-of-the-covid-19-pandemic) goes into the nuances for why this is.]. One reason is that the total number of cases is unknown. However even if that were known, the actual number is not static^[In other words, the IFR is influenced by many factors such as the available treatment and the health of the population.]. With that said, the CDC's current best guess of the overall IFR is [0.65%](https://www.cdc.gov/coronavirus/2019-ncov/hcp/planning-scenarios.html). When you further break this down according to age, the estimated IFR of younger people is much smaller. 
+
+Considering this, you could rightfully say that risk of death is quite small^[I'm not saying I think it's nothing to worry about. It's just that the argument has merits and shouldn't be immediately dismissed without consideration.], especially in low-risk groups. However, just because the mortality rate may low, it doesn't mean the disease isn't serious. Just because you recover from COVID-19, it doesn't mean you're unscathed. That's my biggest fear: it's not the risk of death that worries me, it's the risk of surviving but being unable to do the things I love to do. This is explored in the following sections, and why COVID-19 can be debilitating in those who recover.
+
+
+
+
+Even though 99.35% of people recover from COVID-19, their life  
+
+
+
+
+# The effects from COVID-19 can be permanent and severe
+## Short-term consequences of infection can have long-term impacts
+
+Although 99.35% recover from COVID-19, it doesn't mean they have or ever will return baseline^[That's immediately what I think of, when I think about recovery from a viral infection. For example, when I get a cold, I'm miserable for anywhere from 3-10 days. After that, I'm back to normal. Sometimes, even better because of all the rest.]. For COVID-19, the recovered group would include people who have had acute [kidney](https://jasn.asnjournals.org/content/31/7/1380) and [cardiac](https://www.nature.com/articles/s41569-020-0360-5#further-reading) injuries as a result of infection, but ultimately went on to survive. There are also people who have had [strokes](https://www.nejm.org/doi/full/10.1056/NEJMc2009787#article_citing_articles). Some have even needed to have [limbs amputated](https://www.washingtonpost.com/nation/2020/04/20/nick-cordero-leg-coronavirus/) due to [complications of COVID-19](https://www.kxan.com/news/coronavirus/covid-19-survivor-who-had-most-of-his-fingers-amputated-this-can-happen-to-you/). One young woman needed a [lung transplant](https://www.npr.org/sections/health-shots/2020/06/12/875486356/first-known-u-s-lung-transplant-for-covid-19-patient-performed-in-chicago). These people would also be included in the recovered group.  
+
+The [concensus](https://www.sciencemag.org/news/2020/04/how-does-coronavirus-kill-clinicians-trace-ferocious-rampage-through-body-brain-toes) is that pretty much all organs are fair game to COVID-19. One of the ways COVID-19 can cause so much havoc is through hypercoagulation^[Excessive blood clotting. You can think of it like turning the consistency of blood from that of cooking oil to jelly.]. This would explain why COVID-19, a *respiratory disease*, could bring on things like strokes^[I thought this totally bizarre at first, and didn't immediately see why this virus could cause a seemingly random assortment of diseases. It makes much more sense when you consider the potential consequences of hypercoagulation. This would be much more severe in populations with a high prevalence of diseases like atherosclerosis. You could imagine that this hypercoagulation could be enough to cause a heart-attack or stroke in someone whose vascular system is already clogged.]. 
+
+## Early suggestions of chronic, long term consequences of infections
+There's also the possibility COVID-19 can cause or certainly contribute to chronic conditions. For example, COVID-19 [can damage the heart](https://jamanetwork.com/journals/jamacardiology/fullarticle/2768915) but not to the point where it causes a heart attack. The same thing could happen with the [kidneys](https://www.kidney-international.org/article/S0085-2538(20)30532-9/fulltext#secsectitle0010). This could potentially lead to an increased susceptibility for heart and kidney disease in the future. 
+
+I should note here that it isn't clear just how much of the organ damage caused by COVID-19 is permanent. That is why I used the term **suggestions** in the sub-section title. The only way to know for sure^[As sure as anyone can be about this sort of thing. Like, say the certainty surrounding the link between smoking and lung cancer.] is to wait and see^[SARS-CoV-2 was only discovered ~8 months ago, and it took a couple months for the potential global impact of this virus to become apparent. Since chronic diseases can take years to decades to develop, there just hasn't been enough time to know the impact of COVID-19 in this context.]. That, however, is an answer that literally no-one is satisfied with. My best guess^[I mean guess here literally, because that's what it is.] is that COVID-19 infection will be a risk factor for some chronic diseases. How much of one? Again, I can only guess here, but I'd imagine the magnitude will have a huge range^[In other words, I expect it to vary similarly to the disease severity: for some people it will be negligible, for others it may be substantial.].
+
+# The effects from COVID-19 can also be mild
+## Some people never realize they have been infected
+I was extremely skeptical of reports back in February and March of asymptomatic infections. At the time, I thought that the majority of reports were incorrect^[It's not that I thought it was intentional, just that this was a the *fog of war* sort of thing.], any true cases of asymptomatic infections were extremely rare. I was completely wrong about this. It turns out that the same virus that can be severe enough to kill can also be so mild that people don't even know they have it^[So in some sense, I can understand why someone would incorrectly conclude that the disease isn't actually that bad. This is of course false. It was certainly a surprise to me when I learned just how much the disease could vary from person to person.].     
+
+Right now, the [CDC's best guess](https://www.cdc.gov/coronavirus/2019-ncov/hcp/planning-scenarios.html#table-1) is that 40% of infections are asymptomatic. That is, 40%^[If you look at [table 1.](https://www.cdc.gov/coronavirus/2019-ncov/hcp/planning-scenarios.html#table-1) the range is huge at 10-70%. If you check the legend, it explains that many of the studies were not able to differentiate pre-symptomatic vs asymptomatic cases.] of people infected with COVID-19 will never realize they have been infected.
+
+
+
+## Asymptomatic is not the same as unaffected
+In the previous section I described asymptomatic as people who do not realize they have been infected. This doesn't mean the infection is harmless. In [some asymptomatic people](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7152865/), SARS-CoV-2 can apparently cause an active lung infection with the same clinical features as symptomatic infection. It's likely that much of the damage caused^[Both directly from the virus and indirectly from the immune response.] is reversible. However, this could lead to permanent lung damage in some people.   
+
+# Conclusion
+It should hopefully be clear that there are many outcomes from COVID-19 that aren't death, but still really, really bad. At this point in the pandemic, we've got a pretty good idea of how this disease manifests in the short-term. The good news is that this knowledge has resulted in improved treatments leading to higher survival rates. The bad news is that COVID-19 can still lead to an extremely reduced quality of life. It's likely that COVID-19 will contribute to the burden of chronic disease in the future. Unfortunately, it isn't clear how just how prevelant the serious non-fatal adverse events are for COVID-19. I'll estimate this in future posts.  
+
+
+
+
+

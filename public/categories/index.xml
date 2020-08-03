@@ -12,29 +12,38 @@
     
     
     <item>
+      <title>COVID-19</title>
+      <link>/categories/covid-19/</link>
+      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/covid-19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>disease severity</title>
+      <link>/categories/disease-severity/</link>
+      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/disease-severity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>epidemiology</title>
+      <link>/categories/epidemiology/</link>
+      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/epidemiology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>COVID19</title>
       <link>/categories/covid19/</link>
-      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>/categories/covid19/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>probability</title>
-      <link>/categories/probability/</link>
-      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/probability/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>statistics</title>
-      <link>/categories/statistics/</link>
-      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/statistics/</guid>
       <description></description>
     </item>
     
@@ -48,11 +57,29 @@
     </item>
     
     <item>
+      <title>probability</title>
+      <link>/categories/probability/</link>
+      <pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/probability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>R</title>
       <link>/categories/r/</link>
       <pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>/categories/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>statistics</title>
+      <link>/categories/statistics/</link>
+      <pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/statistics/</guid>
       <description></description>
     </item>
     

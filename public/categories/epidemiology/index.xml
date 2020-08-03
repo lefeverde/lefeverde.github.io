@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>epidemiology on DELs personal site</title>
+    <link>/categories/epidemiology/</link>
+    <description>Recent content in epidemiology on DELs personal site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/epidemiology/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Why COVID-19 is still serious even if you ignore mortality</title>
+      <link>/2020/07/27/why-covid19-is-still-serious-even-if-you-ignore-mortality/</link>
+      <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/07/27/why-covid19-is-still-serious-even-if-you-ignore-mortality/</guid>
+      <description>Introduction There has been quite a lot of focus on using the infection fatality rate (IFR)1 of COVID-19 to quantify the disease severity. The first thing to note here is that despite the math being simple, this is surprisingly hard to calculate2. One reason is that the total number of cases is unknown. However even if that were known, the actual number is not static3. With that said, the CDC’s current best guess of the overall infection fatality rate (IFR) is 0.</description>
+    </item>
+    
+  </channel>
+</rss>

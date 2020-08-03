@@ -1,0 +1,22 @@
+---
+title: The long haulers
+author: Daniel Lefever
+date: '2020-08-03'
+slug: the-long-haulers
+categories:
+  - COVID-19
+  - disease severity
+  - epidemiology
+tags: []
+---
+
+
+[persistent symptoms](https://jamanetwork.com/journals/jama/fullarticle/2768351)
+
+[risk factors](https://www.nature.com/articles/s41586-020-2521-4_reference.pdf)
+
+# The long-haulers
+
+
+[long haulers](https://news.berkeley.edu/2020/07/08/from-lung-scarring-to-heart-damage-covid-19-may-leave-lingering-marks/)
+
