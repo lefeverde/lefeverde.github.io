@@ -1,0 +1,25 @@
+---
+title: 'Introduction to COVID-19 posts'
+author: 'Daniel Lefever'
+date: '2020-07-25'
+slug: introduction-to-covid-19-posts
+categories:
+  - 'COVID-19'
+  - 'SARS-COV-2'
+tags: []
+description: ''
+featured_image: ''
+images: []
+comment: yes
+---
+
+# Perspective 
+I want to be done this pandemic and to just get on with things. Unfortunately, SARS-COV-2 has other ideas. The reality is we're just going to have to live it with for the time being. What this means of course varies from country to country. I'm an American who lives in Pennsylvania with family and friends in various locations scattered throughout the U.S. So everything I write will necessarily be colored by that perspective. This is not to say that I'm happy with our response to the pandemic. This whole thing has been mishandled to such a degree that I couldn't have even imagined possible before the pandemic. However, regardless of how we arrived at this point, I think everyone would agree that our most immediate concern is how can we best minimize the harm from both the virus itself and the mitigation strategies used to contain it.  
+
+# Credentials 
+This is not to say I am an expert when it comes to COVID19. I am not in the infectious disease field, nor am I an epidemiologist. What I am, is a biomedical PhD candidate whose research involves quite a bit of data science. I think I have a knack for dealing with large, messy, imperfectly collected data. I've also spent more time than I would like to admit learning about this pandemic. In short, while I'm not an expert in this field, I do have a background and skills that gives me the ability to understand the science. 
+
+# Motivation
+I was motivated to learn about this virus out of self-interest. I've wanted to keep myself and people I care about safe. From this, I've noticed there is quite a lot of misconceptions the general public holds about the pandemic. Let me start by stating this statement is in no way meant to belittle or otherwise demean anyone. I also want to emphatically state that just because someone has an incorrect understanding of this pandemic, and even science more broadly, it does not mean they are stupid. Most people are not scientists, so of course they will have trouble understanding science! You wouldn't expect the average person to understand forensic accounting or reverse mergers. It's not a personal failing anymore than going to a lawyer for a legal question is. I mean, I can just barely do my taxes. 
+
+With that in mind, I would like to share what I've learned and hope to clarify misconceptions where I can.     

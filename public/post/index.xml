@@ -6,10 +6,19 @@
     <description>Recent content in Posts on DELs personal site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 08 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Modelling personal risk of COVID19 part 1: Why large groups are a really bad idea right now</title>
+      <link>/2020/08/08/modelling-personal-risk-of-covid19-part-1-why-large-groups-are-a-really-bad-idea-right-now/</link>
+      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/08/08/modelling-personal-risk-of-covid19-part-1-why-large-groups-are-a-really-bad-idea-right-now/</guid>
+      <description>Introduction  Danger of groups The birthday problem or how infrequent events can be suprsingly common. If the incidence of something is low, then you could correctly guess that it didn’t happen and be right most of the time. For example, if you were to guess that a randomly selected male does not have breast cancer, you would be right 99.9973% of the time. However, just because something is rare, that doesn’t preclude it from happening.</description>
+    </item>
     
     <item>
       <title>Why COVID-19 is still serious even if you ignore mortality</title>
@@ -17,7 +26,16 @@
       <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/07/27/why-covid19-is-still-serious-even-if-you-ignore-mortality/</guid>
-      <description>true  Introduction There has been quite a lot of focus on using the infection fatality rate (IFR)1 of COVID-19 to quantify the disease severity. The first thing to note here is that despite the math being simple, this is surprisingly hard to calculate2. One reason is that the total number of cases is unknown. However even if that were known, the actual number is not static3. With that said, the CDC’s current best guess of the overall IFR is 0.</description>
+      <description>Introduction The effects from COVID-19 can be permanent and severe Short-term consequences of infection can have long-term impacts Early suggestions of chronic, long term consequences of infections  The effects from COVID-19 can also be mild Some people never realize they have been infected Asymptomatic is not the same as unaffected  Conclusion   Introduction There has been quite a lot of focus on using the infection fatality rate (IFR)1 of COVID-19 to quantify the disease severity.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to COVID-19 posts</title>
+      <link>/2020/07/25/introduction-to-covid-19-posts/</link>
+      <pubDate>Sat, 25 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/07/25/introduction-to-covid-19-posts/</guid>
+      <description>Perspective I want to be done this pandemic and to just get on with things. Unfortunately, SARS-COV-2 has other ideas. The reality is we’re just going to have to live it with for the time being. What this means of course varies from country to country. I’m an American who lives in Pennsylvania with family and friends in various locations scattered throughout the U.S. So everything I write will necessarily be colored by that perspective.</description>
     </item>
     
     <item>

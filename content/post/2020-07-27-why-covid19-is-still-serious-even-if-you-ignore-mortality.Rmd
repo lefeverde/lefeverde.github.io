@@ -9,7 +9,10 @@ categories:
 tags:
   - 'COVID-19'
 slug: why-covid19-is-still-serious-even-if-you-ignore-mortality
-toc: true
+
+output:
+  blogdown::html_page:
+    toc: true
 ---
 
 ```{r global_options, include=FALSE}

@@ -6,10 +6,19 @@
     <description>Recent content in model on DELs personal site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 08 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/model/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Modelling personal risk of COVID19 part 1: Why large groups are a really bad idea right now</title>
+      <link>/2020/08/08/modelling-personal-risk-of-covid19-part-1-why-large-groups-are-a-really-bad-idea-right-now/</link>
+      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/08/08/modelling-personal-risk-of-covid19-part-1-why-large-groups-are-a-really-bad-idea-right-now/</guid>
+      <description>Introduction  Danger of groups The birthday problem or how infrequent events can be suprsingly common. If the incidence of something is low, then you could correctly guess that it didn’t happen and be right most of the time. For example, if you were to guess that a randomly selected male does not have breast cancer, you would be right 99.9973% of the time. However, just because something is rare, that doesn’t preclude it from happening.</description>
+    </item>
     
     <item>
       <title>Modelling personal risk of COVID19 part 1: Why large groups are a really bad idea right now</title>
